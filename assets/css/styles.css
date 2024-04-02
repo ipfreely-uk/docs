@@ -1,0 +1,6 @@
+body { font-size: calc(0.6em + 0.6vw); font-family: monospace; max-width: 60em; margin: 0 auto; color: black; background-color:white; }
+
+nav { text-align: center; font-size: inherit; font-weight: bolder; }
+nav ul { list-style-type: none; }
+nav ul li { display: inline-block; }
+nav ul li + li::before { content: ' - '; }
