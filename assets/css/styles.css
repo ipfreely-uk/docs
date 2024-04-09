@@ -4,3 +4,6 @@ nav { text-align: center; font-size: inherit; font-weight: bolder; }
 nav ul { list-style-type: none; }
 nav ul li { display: inline-block; }
 nav ul li + li::before { content: ' - '; }
+
+table { table-layout: fixed; width: 100%; border-collapse: collapse; }
+table, th, td { border: 1px solid black; padding: 8px; }
