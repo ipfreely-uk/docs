@@ -25,7 +25,11 @@
       Useful for implementing network element management systems, DOCSIS provisioning systems, etc.
     </p>
   
-    <p>These libraries do not perform any network I/O but enable conversion to/from standard types that do.</p>
+    <p>These libraries do not perform any network I/O but enable conversion to/from standard types that do.
+      Types tend towards 
+      <a href="https://en.wikipedia.org/wiki/Immutable_object">immutable</a>
+      <a href="https://en.wikipedia.org/wiki/Value_type_and_reference_type">values</a>
+      and type safety via <a href="https://en.wikipedia.org/wiki/Generic_programming">generics</a>.</p>
 
     <h2>Implementations</h2>
 
@@ -36,19 +40,9 @@
         <th><a href="https://go.dev/">Go</a></th>
       </tr>
       <tr>
-        <th>Binaries</th>
-        <td><a href="https://central.sonatype.com/search?namespace=uk.ipfreely">Maven Central</a></td>
-        <td><em>not applicable</em></td>
-      </tr>
-      <tr>
         <th>API</th>
         <td><a href="https://ipfreely-uk.github.io/java/">Javadoc</a></td>
         <td><a href="https://pkg.go.dev/github.com/ipfreely-uk/go">pkg.go.dev documentation</a></td>
-      </tr>
-      <tr>
-        <th>Source Code</th>
-        <td><a href="https://github.com/ipfreely-uk/java">Java Maven Project</a></td>
-        <td><a href="https://github.com/ipfreely-uk/go">Go Module</a></td>
       </tr>
       <tr>
         <th>License</th>
@@ -64,6 +58,16 @@
         <th>Dependency Hint</th>
         <td><code>uk.ipfreely:addresses</code></td>
         <td><code>github.com/ipfreely-uk/go/ip</code></td>
+      </tr>
+      <tr>
+        <th>Source Code</th>
+        <td><a href="https://github.com/ipfreely-uk/java">Java Maven Project</a></td>
+        <td><a href="https://github.com/ipfreely-uk/go">Go Module</a></td>
+      </tr>
+      <tr>
+        <th>Binaries</th>
+        <td><a href="https://central.sonatype.com/search?namespace=uk.ipfreely">Maven Central</a></td>
+        <td><em>not applicable</em></td>
       </tr>
     </table>
 
