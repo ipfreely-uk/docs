@@ -7,3 +7,5 @@ nav ul li + li::before { content: ' - '; }
 
 table { table-layout: fixed; width: 100%; border-collapse: collapse; }
 table, th, td { border: 1px solid black; padding: 8px; }
+
+a.link-symbol { text-decoration: none; }
