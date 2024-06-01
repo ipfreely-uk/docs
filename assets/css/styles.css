@@ -6,10 +6,10 @@ nav ul li { display: inline-block; }
 nav ul li + li::before { content: ' - '; }
 
 h1 { line-height: 1.3em; }
-h1 img { height: 1em; float: right; margin: 0px 15px 15px 0px; }
+h1 img { height: 1em; max-height: 100%; max-width: 100%; float: right; margin: 0px 15px 15px 0px; }
 h3 { color: darkslategray; }
 
-table { table-layout: fixed; border-collapse: collapse; }
+table { table-layout: fixed; border-collapse: collapse; size: inherit; }
 table, th, td { border: 1px solid gray; padding: 8px; }
 table, th { text-align: left; }
 
