@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Sitemap
+        run: sh scripts/sitemap.sh
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
