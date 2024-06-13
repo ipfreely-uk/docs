@@ -25,6 +25,25 @@
       Implementations are available for the <a href="https://dev.java/">Java</a> and <a href="https://go.dev/">Go</a> languages.
     </p>
 
+    <h2 id="example">Example <a href="#example" class="link-symbol" title="implementations anchor">&#x1f517;</a></h2>
+
+    <p>This Go code picks a random address from a subnet:</p>
+
+<pre><code>
+  func <strong>randomAddressFrom</strong>[A ip.Address[A]](<strong>netBlock</strong> network.Block[A]) A {
+    netAddr := netBlock.First()
+    family := netAddr.Family()
+    inverseMask := netBlock.Mask().Not()
+    return randomAddress(family).And(inverseMask).Or(netAddr)
+  }
+
+  func <strong>randomAddress</strong>[A ip.Address[A]](<strong>f</strong> ip.Family[A]) A {
+    slice := make([]byte, f.Width()/8)
+    _, _ = rand.Read(slice)
+    return f.MustFromBytes(slice...)
+  }
+</code></pre>
+
     <h2 id="impl">Implementations <a href="#impl" class="link-symbol" title="implementations anchor">&#x1f517;</a></h2>
 
     <h3>Java</h3>
