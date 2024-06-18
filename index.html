@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IP addresses as mathematical types</title>
+    <title>IP addresses (v4/v6) as mathematical types with arithmetic, bitwise ops, iteration, and arbitrary sets and ranges.</title>
     <meta name="description" content="Niche IP address libraries for Java and Go">
     <link rel="icon" href="assets/icons/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
@@ -12,11 +12,12 @@
 
     <h1 id="ipfreely">IPFreely.uk <img src="assets/icons/favicon.png" alt="logo"></h1>
 
-    <p>Niche open source software libraries that treat IP addresses as mathematical types.</p>
+    <p><strong>Niche open source software libraries that treat IP addresses as mathematical types.</strong></p>
 
     <p>
       Use for arithmetic, bitwise operations, iteration, and arbitrary sets and ranges of IP addresses.
       Useful for implementing network element management systems, DOCSIS provisioning systems, etc.
+      Supports IPv4 &amp; IPv6.
     </p>
   
     <p>These libraries do not perform any network I/O but enable conversion to/from standard types that do.
@@ -36,10 +37,9 @@ func randomFrom[A ip.Address[A]](b network.Block[A]) (addr A) {
   netAddr := b.First()
   f := netAddr.Family()
   inverseMask := netBlock.Mask().Not()
-  
   return random(f).And(inverseMask).Or(netAddr)
 }
-  
+
 func random[A ip.Address[A]](f ip.Family[A]) (addr A) {
   slice := make([]byte, f.Width()/8)
   _, _ = rand.Read(slice)
@@ -114,11 +114,13 @@ func random[A ip.Address[A]](f ip.Family[A]) (addr A) {
 
     <p></p>
 
-    <nav>
-      <ul>
-        <li><a href="https://github.com/ipfreely-uk/docs/blob/main/LICENSE">COPYRIGHT</a></li>
-      </ul>
-    </nav>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/ipfreely-uk/docs/blob/main/LICENSE">COPYRIGHT</a></li>
+        </ul>
+      </nav>
+    </footer>
 
   </body>
 </html>
