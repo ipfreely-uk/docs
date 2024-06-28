@@ -40,7 +40,8 @@
   f := netAddr.Family()
   slice := <span class="keyword">make</span>([]byte, f.Width()/8)
   _, _ = rand.Read(slice)
-  return f.MustFromBytes(slice...).And(inverseMask).Or(netAddr)
+  r := f.MustFromBytes(slice...)
+  return r.And(inverseMask).Or(netAddr)
 }
     </code></pre>
 
