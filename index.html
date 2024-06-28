@@ -38,14 +38,9 @@
   netAddr := b.First()
   inverseMask := b.Mask().Not()
   f := netAddr.Family()
-  return randFrom(f).And(inverseMask).Or(netAddr)
-}
-
-<em>// Generate random IP address</em>
-<span class="keyword">func</span> <span class="func">randFrom</span><span class="generics">[A ip.Address[A]]</span>(f <span class="type">ip.Family[A]</span>) <span class="type">A</span> {
   slice := <span class="keyword">make</span>([]byte, f.Width()/8)
   _, _ = rand.Read(slice)
-  return f.MustFromBytes(slice...)
+  return f.MustFromBytes(slice...).And(inverseMask).Or(netAddr)
 }
     </code></pre>
 
