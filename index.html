@@ -33,8 +33,8 @@
     <p>This Go code picks a random address from a subnet:</p>
 
     <pre><code>
-<em>// Picks random IP address from CIDR block</em>
-<span class="keyword">func</span> <span class="func">pickFrom</span><span class="generics">[A ip.Address[A]]</span>(b <span class="type">network.Block[A]</span>) <span class="type">A</span> {
+<em>// Random IP address from CIDR block</em>
+<span class="keyword">func</span> <span class="func">randFrom</span><span class="generics">[A ip.Address[A]]</span>(b <span class="type">network.Block[A]</span>) <span class="type">A</span> {
   netAddr := b.First()
   inverseMask := b.Mask().Not()
   f := netAddr.Family()
