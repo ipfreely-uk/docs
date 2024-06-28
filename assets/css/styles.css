@@ -16,4 +16,10 @@ table, th { text-align: left; }
 
 a.link-symbol { text-decoration: none; }
 
-pre { width: 100%; border: solid darkslategray; overflow: scroll; }
+pre { width: 99%; border-top: solid darkslategray; border-bottom: solid darkslategray; overflow: scroll; }
+
+code em { color: gray; }
+.func { color: rgb(12, 151, 197); font-weight: bold; }
+.generics { font-size: smaller; color: gray; }
+.type { color: rgb(12, 151, 197); font-weight: bold; }
+.keyword { font-size: smaller; color: gray; }
