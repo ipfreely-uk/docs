@@ -18,8 +18,8 @@ a.link-symbol { text-decoration: none; }
 
 pre { width: 99%; border-top: solid darkslategray; border-bottom: solid darkslategray; overflow: scroll; }
 
-code em { color: gray; }
+code em { color: darkslategrey; }
 .func { color: rgb(12, 151, 197); font-weight: bold; }
-.generics { font-size: smaller; color: gray; }
+.generics { font-size: smaller; color: darkslategrey; }
 .type { color: rgb(12, 151, 197); font-weight: bold; }
-.keyword { font-size: smaller; color: gray; }
+.keyword { font-size: smaller; color: darkslategrey; }
