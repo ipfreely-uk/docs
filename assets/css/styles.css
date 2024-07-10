@@ -23,3 +23,6 @@ code em { color: darkslategrey; }
 .generics { font-size: smaller; color: darkslategrey; }
 .type { color: rgb(12, 151, 197); font-weight: bold; }
 .keyword { font-size: smaller; color: darkslategrey; }
+
+.box { display: flex; flex-wrap: wrap; }
+section { padding: 1em; }
