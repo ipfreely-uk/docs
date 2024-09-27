@@ -34,7 +34,7 @@
       languages.
     </p>
 
-    <h2 id="example">Example <a href="#example" class="link-symbol" title="implementations anchor">&#x1f517;</a></h2>
+    <h2 id="example">Examples <a href="#example" class="link-symbol" title="implementations anchor">&#x1f517;</a></h2>
 
     <p>This Go code picks a random address from a subnet:</p>
 
@@ -48,6 +48,31 @@
   _, _ = rand.Read(slice)
   r := f.MustFromBytes(slice...)
   return r.And(inverseMask).Or(netAddr)
+}
+    </code></pre>
+
+    <p>This Java code picks divides addresses into subnets:</p>
+
+    <pre><code>
+<em>/**
+ * @param initial available range
+ * @param count min number of allocatable addresses required
+ * @return stream of subnets
+ * @param &lt;A&gt; address family
+ */</em>
+ <span class="keyword">public static</span> <span class="generics">&lt;A extends Address&lt;A&gt;&gt;</span> <span class="type">Stream&lt;Block&lt;A&gt;&gt;</span> divide(<span class="type">Block&lt;A&gt;</span> initial, <span class="type">BigInteger</span> count) {
+  <span class="type">Family&lt;A&gt;</span> f = initial.first().family();
+  <span class="type">Subnets&lt;A&gt;</span> s = f.subnets();
+  <span class="type">BigInteger</span> min = f == <span class="type">Family</span>.v4()
+                 ? count.add(BigInteger.valueOf(2))
+                 : count;
+  <span class="type">int</span> bits = f.width();
+  <span class="type">int</span> maskBits = <span class="type">IntStream</span>.rangeClosed(0, f.width())
+                          .map(i -> bits - i)
+                          .filter(m -> s.count(m).compareTo(min) >= 0)
+                          .findFirst()
+                          .orElseThrow(<span class="type">IllegalArgumentException</span>::<span class="keyword">new</span>);
+  return initial.subnets(maskBits);
 }
     </code></pre>
 
