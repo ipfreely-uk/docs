@@ -143,7 +143,7 @@
  * @return stream of subnets
  * @param &lt;A&gt; address family
  */</em>
- <span class="keyword">public static</span> <span class="generics">&lt;A extends Address&lt;A&gt;&gt;</span> <span class="type">Stream&lt;Block&lt;A&gt;&gt;</span> divide(<span class="type">Block&lt;A&gt;</span> initial, <span class="type">BigInteger</span> count) {
+ <span class="keyword">static</span> <span class="generics">&lt;A extends Address&lt;A&gt;&gt;</span> <span class="type">Stream&lt;Block&lt;A&gt;&gt;</span> divide(<span class="type">Block&lt;A&gt;</span> initial, <span class="type">BigInteger</span> count) {
   <span class="type">Family&lt;A&gt;</span> f = initial.first().family();
   <span class="type">Subnets&lt;A&gt;</span> s = f.subnets();
   <span class="type">BigInteger</span> min = f == <span class="type">Family</span>.v4()
