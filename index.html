@@ -150,7 +150,7 @@
                  ? count.add(BigInteger.valueOf(2))
                  : count;
   <span class="type">int</span> bits = f.width();
-  <span class="type">int</span> maskBits = <span class="type">IntStream</span>.rangeClosed(0, f.width())
+  <span class="type">int</span> maskBits = <span class="type">IntStream</span>.rangeClosed(0, bits)
                           .map(i -> bits - i)
                           .filter(m -> s.count(m).compareTo(min) >= 0)
                           .findFirst()
