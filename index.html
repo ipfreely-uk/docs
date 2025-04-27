@@ -123,7 +123,7 @@
 
     <pre><code>
 <em>// Random IP address from CIDR block</em>
-<span class="keyword">func</span> <span class="func">randFrom</span><span class="generics">[A ip.Number[A]]</span>(b <span class="type">ipset.Block[A]</span>) <span class="type">A</span> {
+<span class="keyword">func</span> <span class="func">randFrom</span><span class="generics">[A ip.Int[A]]</span>(b <span class="type">ipset.Block[A]</span>) <span class="type">A</span> {
   netAddr := b.First()
   inverseMask := b.Mask().Not()
   f := netAddr.Family()
