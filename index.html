@@ -147,7 +147,7 @@
   <span class="type">Family&lt;A&gt;</span> f = initial.first().family();
   <span class="type">Subnets&lt;A&gt;</span> s = f.subnets();
   <em>// IPv4 networks have 2 reserved numbers</em>
-  <span class="type">BigInteger</span> min = f == <span class="type">Family</span>.v4()
+  <span class="type">BigInteger</span> min = (f == <span class="type">Family</span>.v4())
                  ? count.add(BigInteger.valueOf(2))
                  : count;
   <span class="type">int</span> bits = f.width();
